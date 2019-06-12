@@ -66,7 +66,7 @@
     </div>
     </div>
 
-    <div class="col-10 offset-1">
+    <div class="col-10 offset-1 comments">
         <h1 class="float-left">Comments</h1>
 
         <!-- Button trigger modal -->
@@ -79,7 +79,7 @@
 
     <div class="row">
         <% @place.comments.each do |comment| %>
-            <div class="col-12 col-sm-6">
+            <div class="col-12 col-sm-6 offset-1">
                 <blockquote>
                     <b><%= comment.humanized_rating %></b> -
                         <%= comment.message %>
@@ -115,7 +115,7 @@
     </div>
     </div>
 
-    <div class="col-10 offset-1">
+    <div class="col-10 offset-1 photos">
         <h1 class="float-left">Photos</h1>
 
         <!-- Button trigger modal -->
@@ -128,7 +128,7 @@
         <div class="row">
             <% @place.photos.each do |photo| %>
                 <div class="col-12 col-sm-6">
-                    <%= image_tag photo.picture.to_s %>
+                    <%= image_tag photo.picture.to_s, class: 'show-image' %>
                     <%= photo.caption %>
                 </div>
             <% end %>
